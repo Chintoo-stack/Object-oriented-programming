@@ -1,0 +1,47 @@
+A constructor is a special memeber function of a class that is automatically called when an object is created. It initializes the data member of the class and prepare the object for use.
+
+Purpose of constructor:
+1. for object initialization
+2. code reusability
+3. Ensures default values
+
+Types of constructor:
+1. Non parametrized constructor
+2. Parametrized constructor
+3. Copy constructor--we can create a copy constructor manually by defining a constructor that takes an object of the same class as a parameter and copies its attributes.
+
+import java.util.*;
+
+class Employee {
+    public String employeeName; // To store the name of the employee
+    public int salary;          // To store the salary of the employee
+
+    // Parameterized constructor
+    public Employee(String name, int salary) {
+        this.employeeName = name;
+        this.salary = salary;
+    }
+    
+    // Copy Constructor
+    public Employee(Employee employee) {
+        // Calling another constructor
+        this(employee.employeeName, employee.salary);
+    }
+}
+
+// Main Class
+class Main {
+    public static void main(String[] args) {
+        /* Creating an object of Employee class and passing 
+        values for the parameterized constructor */
+        Employee obj = new Employee("Raj", 10000);
+        
+        // Creating a copy of obj using Copy constructor
+        Employee objCopy = new Employee(obj);
+        
+        // Printing the attibutes of copied object
+        System.out.println("Name of the copied employee: " + objCopy.employeeName);
+        System.out.println("Salary of the copied employee: " + objCopy.salary);
+    }
+}
+
