@@ -1,0 +1,27 @@
+The SOLID principles are a set of five design guidelines introduced by Robert C. Martin to enhance the maintainability, scalability, and robustness of object-oriented software.These principles help developers create code that is more modular, flexible, and easier to understand. Let's go through each principle in detail.
+
+1. Single Responsibility Principle (SRP)
+A class should have only one reason to change, meaning it should have only a single responsibility.
+
+2. Open/Closed Loop principle
+A class should be open for extension but closed for modification. 
+#include <bits/stdc++.h>
+using namespace std;
+
+class Shape {
+public:
+    virtual double calculateArea() = 0;
+};
+
+class Rectangle : public Shape {
+public:
+    double calculateArea() override { return length * breadth; }
+};
+
+class Circle : public Shape {
+public:
+    double calculateArea() override { return M_PI * radius * radius; }
+};
+
+3.Liskov Substitiution principles
+Subtypes should be substituable for their base class without altering the correctness of the program.
