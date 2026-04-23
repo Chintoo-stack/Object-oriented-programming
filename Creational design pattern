@@ -1,0 +1,14 @@
+What is creational design pattern?
+ Creational deign pattern deals with creation of object.
+
+1. Singleton design pattern
+Ensure that class has only one instance and provides a global point of access to that instance.
+
+Working of singleton pattern
+1. Private constructor: Prevents instantiation from outside the class
+2. Static variable: Hold the single instance of the class
+3. Public static method: Provides a global access point to the instance
+
+Approaches to implement singleton pattern:
+1. Eager loading: When the class is loaded instance also created
+2. Lazy loading: When the requirement comes then only instace is created.
