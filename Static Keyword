@@ -1,0 +1,53 @@
+A static Keyword used to indicate that the member belong to a class rather than particular instance.
+
+Static Varibles in Java
+Static variables, also known as class variables, are shared by all instances of a class. They are declared with the static keyword and are initialized only once when the class is loaded into memory. 
+They are useful for storing common values or constants that are the same for all objects.
+
+import java.util.*;
+
+// Counter class
+class Counter {
+    static int count = 0; // static variable
+    
+    // Constructor
+    Counter() {
+        count++;
+    }
+    
+    // Method to display count
+    static void displayCount() {
+        System.out.println("Count: " + count);
+    }
+}
+
+// Main class
+class Main {
+    public static void main(String[] args) {
+        Counter c1 = new Counter();
+        Counter c2 = new Counter();
+        Counter.displayCount(); // Output: Count: 2
+    }
+}
+
+Static Methods in Java
+Static methods belong to the class rather than to any instance. They can be called without creating an object of the class. 
+These methods are commonly used for utility or helper functions like mathematical calculations.
+
+import java.util.*;
+
+// Math Utility class
+class MathUtils {
+    static int add(int a, int b) {
+        return a + b;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        // Calling static method without object creation
+        int result = MathUtils.add(5, 3); 
+        
+        System.out.println("Result: " + result); // Output: Result: 8
+    }
+}
